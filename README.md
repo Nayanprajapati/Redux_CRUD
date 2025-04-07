@@ -29,3 +29,10 @@ cd react-redux-crud
 npm install
 npm run dev
 ```
+
+## Future Improvements
+
+- Form Validation: Add validation to user input when creating or updating a user.
+- Pagination: Implement pagination for better handling of large lists of users.
+- User Authentication: Add user login and authentication.
+- Styling Enhancements: Improve the UI and make it responsive for all devices.
