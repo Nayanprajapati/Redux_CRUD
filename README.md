@@ -12,3 +12,20 @@ This is a React Redux application that allows you to manage users through a simp
 - Delete: Remove users from the list.
 - Search: Filter users based on their name.
 - Modal: View detailed user information in a modal.
+
+## Technologies Used
+
+- React: A JavaScript library for building user interfaces.
+- Redux Toolkit: A toolset for efficient Redux development.
+- Axios: A promise-based HTTP client for making API requests.
+- React Router: For handling routing within the application.
+- CSS: Custom styles for the modal and the overall user interface.
+
+## Setup Instructions
+
+```sh
+git clone https://github.com/your-username/react-redux-crud.git
+cd react-redux-crud
+npm install
+npm run dev
+```
