@@ -1,25 +1,33 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { searchUser } from "../features/userDetailSlice";
 
-const Navbar = ({ searchData, setSearchData }) => {
+const Navbar = () => {
   const allusers = useSelector((state) => state.app.users);
+  const dispatch = useDispatch();
+
+  const searchData = useSelector((state) => state.app.searchData);
+
+  const handleSearchChange = (e) => {
+    dispatch(searchUser(e.target.value));
+  };
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
-        <h4 className="navbar-brand m-0">RTK</h4>
+        <h4 className="navbar-brand m-0">CRUD</h4>
 
         <div className="collapse navbar-collapse d-flex justify-content-between">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
               <Link to="/" className="nav-link">
-                Create Post
+                Create Data
               </Link>
             </li>
             <li className="nav-item">
               <Link to="/read" className="nav-link">
-                All Post {allusers.length ? `(${allusers.length})` : ""}
+                All Data {allusers.length ? `(${allusers.length})` : ""}
               </Link>
             </li>
           </ul>
@@ -31,7 +39,7 @@ const Navbar = ({ searchData, setSearchData }) => {
               placeholder="Search"
               aria-label="Search"
               value={searchData}
-              onChange={(e) => setSearchData(e.target.value)}
+              onChange={handleSearchChange}
               style={{ width: "500px" }}
             />
           </form>
